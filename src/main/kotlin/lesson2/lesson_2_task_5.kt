@@ -1,23 +1,20 @@
 package lesson2
 
+import kotlin.math.pow
+
+
 
 fun main() {
 
     val contribution = 70_000.0
-    val interestRate = 0.167
-    var year = 1
+    val interestRate = 16.7
+    val year = 20
     var amount = contribution
 
 
-    while (year <= 20) {
-        amount = calcAmountAfterYear(contribution, year, interestRate)
-        year++
-    }
+
+    amount = contribution * (1 + interestRate / 100).pow(year)
+
+
     println(String.format("Размер вклада через 20 лет: %.3f", amount))
-}
-
-fun calcAmountAfterYear(contribution: Double, currentYear: Int, interestRate: Double): Double {
-    if (currentYear > 20) return contribution
-
-    return contribution * (1.0 + interestRate / 365)
 }
