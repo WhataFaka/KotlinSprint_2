@@ -3,14 +3,18 @@ package lesson4
 fun main() {
 
     val day = 5
+    val isEven = day % 2 != 0
 
-    val armsAndPress = "Руки-Пресс"
-    val legsAndBack = "Ноги-Спина"
+    val arms = true
+    val press = true
+    val legs = true
+    val back = true
 
     println(
-        "Упражнения для рук: \t${(armsAndPress === ARMS_AND_PRESS) && (day % 2 != 0)} \nУпражнения для ног: \t${(legsAndBack === LEGS_AND_BACK) && (day % 2 == 0)} \nУпражнения для спины: \t${(legsAndBack === LEGS_AND_BACK) && (day % 2 == 0)} \nУпражнения для пресса: \t${(armsAndPress === ARMS_AND_PRESS) && (day % 2 != 0)}"
+        "Упражнения для рук: \t${arms && isEven} " +
+                "\nУпражнения для ног: \t${!legs && isEven} " +
+                "\nУпражнения для спины: \t${!back && isEven} " +
+                "\nУпражнения для пресса: \t${press && (day % 2 != 0)}"
     )
 }
 
-const val ARMS_AND_PRESS = "Руки-Пресс"
-const val LEGS_AND_BACK = "Ноги-Спина"
