@@ -11,9 +11,9 @@ fun main() {
     println("Введите второе число:")
     val secondNumb = readln().toInt()
 
-    if ((firstNumb == correctNumb1) && (secondNumb == correctNumb2)) {
+    if ((firstNumb == correctNumb1 || firstNumb == correctNumb2) && (secondNumb == correctNumb2 || secondNumb == correctNumb1)) {
         println("Поздравляем! Вы выиграли главный приз!")
-    } else if ((firstNumb == correctNumb1) || (secondNumb == correctNumb2))
+    } else if ((firstNumb == correctNumb1 || firstNumb == correctNumb2) || (secondNumb == correctNumb2 || secondNumb == correctNumb1))
         println("Вы выиграли утешительный приз!\nВыигрышные числа: $correctNumb1 и $correctNumb2")
     else println(
         "Неудача! Крутите барабан!\n" +
