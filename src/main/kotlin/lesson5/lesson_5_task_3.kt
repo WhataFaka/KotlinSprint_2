@@ -7,9 +7,9 @@ fun main() {
     println("Введите второе число:")
     val secondNumb = readln().toInt()
 
-    if ((firstNumb == FIRST_CORRECT_NUMB) && (secondNumb == SECOND_CORRECT_NUMB)) {
+    if ((firstNumb == FIRST_CORRECT_NUMB || firstNumb == SECOND_CORRECT_NUMB) && (secondNumb == SECOND_CORRECT_NUMB || secondNumb == FIRST_CORRECT_NUMB)) {
         println("Поздравляем! Вы выиграли главный приз!")
-    } else if ((firstNumb == FIRST_CORRECT_NUMB) || (secondNumb == SECOND_CORRECT_NUMB))
+    } else if ((firstNumb == FIRST_CORRECT_NUMB || firstNumb == SECOND_CORRECT_NUMB) || (secondNumb == SECOND_CORRECT_NUMB || secondNumb == FIRST_CORRECT_NUMB))
         println("Вы выиграли утешительный приз!\nВыигрышные числа: 17 и 9")
     else println(
         "Неудача! Крутите барабан!\n" +
